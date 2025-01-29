@@ -25,14 +25,14 @@
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
+
+        <!-- Hero Content Modified -->
         <div class="hero-content">
             <h2>Hi, 🖐️... it's me</h2>
             <p>Muhammad Maheer Al'Asyi<br> and I am a</p>
             <h1 id="text"></h1>
-            <div class="buttons">
-                <button>Hire Me</button>
-                <button>Download CV</button>
-            </div>
+
+            <!-- Social Media Icons -->
             <div class="medsos">
                 <div class="icon">
                     <i class="fa-brands fa-facebook"></i>
@@ -48,11 +48,23 @@
                         <i class="fa-brands fa-youtube"></i>
                     </a>
                 </div>
-
                 <div class="icon">
                     <i class="fa-brands fa-github"></i>
                 </div>
             </div>
+            
+            <!-- Video Player Section -->
+            <h3>Tugas Seni Rupa Kelas 3B</h3>
+            <h3>SD IT Luqmanul Hakim</h3>
+            <div class="video-container">
+                <video id="videoPlayer" controls>
+                    <source src="dongeng.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img id="playButton" src="play-button.png" alt="Play" class="play-button">
+            </div>
+
+            
         </div>
     </div>
 
@@ -64,6 +76,29 @@
             backSpeed: 120,
             loop: true
         });
+    </script>
+    <script>
+        const video = document.getElementById('videoPlayer');
+        const playButton = document.getElementById('playButton');
+
+        // Play video and hide play button
+        playButton.addEventListener('click', function () {
+            video.style.display = 'block';
+            playButton.style.display = 'none';
+            video.play();
+        });
+
+        // Fullscreen on rotation (optional feature)
+        function handleOrientationChange() {
+            if (window.innerHeight < window.innerWidth) { // Landscape mode
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) { // For Safari
+                    video.webkitRequestFullscreen();
+                }
+            }
+        }
+        window.addEventListener('resize', handleOrientationChange);
     </script>
     <script src="script.js"></script>
 </body>
