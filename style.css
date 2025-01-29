@@ -76,7 +76,7 @@
 .hero-content {
     width: 80%;
     position: absolute;
-    top: 70%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -86,35 +86,47 @@
     color: whitesmoke;
 }
 
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 30px;
+h3 {
+    color: rgb(235, 163, 30);
+    font-weight: 300;
 }
 
-.buttons button {
-    width: 200px;
-    height: 40px;
-    padding: 10px 20px;
-    border-radius: 30px;
-    background-color: #1e1e1e;
-    color: white;
-    border: none;
+/* Video Container */
+.video-container {
+    position: relative;
+    display: inline-block;
+    width: 80%;
+    height: auto;
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Play Button Styling */
+.play-button {
+    position: absolute;
+    top: 80px;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 150px;
     cursor: pointer;
-    transition: .6s;
 }
 
-.buttons button:hover {
-    background-color: whitesmoke;
-    color: #1e1e1e;
+/* Hidden video initially */
+video {
+    display: none;
 }
 
 .medsos {
     display: flex;
     gap: 30px;
     justify-content: center;
-    margin-top: 50px;
+    z-index: 1;
 }
 
 .medsos .icon {
